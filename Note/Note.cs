@@ -8,19 +8,21 @@ namespace Notebook.Part1
 {
     public class Note : IEquatable<Note>, IComparable<Note>, IComparable, IFormattable
     {
-        private DateTime noteDateTime;
-        private string noteText;
-        private string author;
-
         /// <summary>Initializes a new instance of the <see cref="Note"/> class.</summary>
         /// <param name="noteText">The note text.</param>
-        /// <param name="author">The author of the note.</param>
+        /// <param name="author">The Author of the note.</param>
         public Note(string noteText, string author)
         {
-            this.author = author;
-            this.noteText = noteText;
-            this.noteDateTime = DateTime.Now;
+            this.Author = author;
+            this.NoteText = noteText;
+            this.NoteDateTime = DateTime.Now;
         }
+
+        public DateTime NoteDateTime { get; private set; }
+
+        public string NoteText { get; private set; }
+
+        public string Author { get; private set; }
 
         /// <summary>Determines whether the specified <see cref="object"/>, is equal to this instance.</summary>
         /// <param name="obj">The <see cref="object"/> to compare with this instance.</param>
@@ -40,15 +42,15 @@ namespace Notebook.Part1
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
-            return this.noteDateTime.GetHashCode();
+            return this.NoteDateTime.GetHashCode();
         }
 
         /// <summary>Changes the note's text and resets its date.</summary>
         /// <param name="newText">The new text.</param>
         public void ChangeNote(string newText)
         {
-            this.noteText = newText;
-            this.noteDateTime = DateTime.Now;
+            this.NoteText = newText;
+            this.NoteDateTime = DateTime.Now;
         }
 
         /// <summary>
@@ -65,7 +67,7 @@ namespace Notebook.Part1
                 return false;
             }
 
-            if (this.noteText == other.noteText && this.author == other.author)
+            if (this.NoteText == other.NoteText && this.Author == other.Author)
             {
                 return true;
             }
@@ -90,17 +92,17 @@ namespace Notebook.Part1
         /// </returns>
         public int CompareTo(Note other)
         {
-            if (ReferenceEquals(other, null) || this.noteDateTime > other.noteDateTime)
+            if (ReferenceEquals(other, null) || this.NoteDateTime > other.NoteDateTime)
             {
                 return -1;
             }
 
-            if (this.noteDateTime == other.noteDateTime)
+            if (this.NoteDateTime == other.NoteDateTime)
             {
                 return 0;
             }
 
-            if (this.noteDateTime < other.noteDateTime)
+            if (this.NoteDateTime < other.NoteDateTime)
             {
                 return 1;
             }
@@ -175,16 +177,16 @@ namespace Notebook.Part1
                 switch (formatString[i])
                 {
                     case 'A': // A - Author
-                        noteAsString.Append(this.author);
+                        noteAsString.Append(this.Author);
                         break;
                     case 'D': // D - Date
-                        noteAsString.Append(this.noteDateTime.ToString("d", formatProvider));
+                        noteAsString.Append(this.NoteDateTime.ToString("d", formatProvider));
                         break;
                     case 'C': // C - Content
-                        noteAsString.Append(this.noteText);
+                        noteAsString.Append(this.NoteText);
                         break;
                     case 'Y': // Y - Year
-                        noteAsString.Append(this.noteDateTime.Year);
+                        noteAsString.Append(this.NoteDateTime.Year);
                         break;
                     default:
                         throw new ArgumentException($"Unsupported format: {format}");
