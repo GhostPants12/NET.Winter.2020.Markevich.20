@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringExtension", "StringEx
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringExtension.Tests", "StringExtension.Tests\StringExtension.Tests.csproj", "{94534054-8BAB-416C-928E-8FA1E11258F4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strings.Task2", "Note\Strings.Task2.csproj", "{F033BDC8-D828-4264-AFA1-46A41641EA24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTests", "NoteTests\NoteTests.csproj", "{47449589-1988-4101-8144-FBD8A4883303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{94534054-8BAB-416C-928E-8FA1E11258F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94534054-8BAB-416C-928E-8FA1E11258F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94534054-8BAB-416C-928E-8FA1E11258F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F033BDC8-D828-4264-AFA1-46A41641EA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F033BDC8-D828-4264-AFA1-46A41641EA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F033BDC8-D828-4264-AFA1-46A41641EA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F033BDC8-D828-4264-AFA1-46A41641EA24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47449589-1988-4101-8144-FBD8A4883303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47449589-1988-4101-8144-FBD8A4883303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47449589-1988-4101-8144-FBD8A4883303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47449589-1988-4101-8144-FBD8A4883303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
